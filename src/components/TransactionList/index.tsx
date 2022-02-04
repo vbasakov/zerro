@@ -30,6 +30,7 @@ const TransactionList: FC<TransactionListProps> = props => {
     sx,
   } = props
 
+  //todo enrich transactions
   const transactions = useSelector(getSortedTransactions)
   const [filter, setFilter] = useState(filterConditions)
   const debouncedFilter = useDebounce(filter, 300)
@@ -37,6 +38,7 @@ const TransactionList: FC<TransactionListProps> = props => {
     condition => setFilter(filter => ({ ...filter, ...condition })),
     []
   )
+
   const handleClearFilter = useCallback(() => {
     setFilter(filterConditions)
   }, [filterConditions])

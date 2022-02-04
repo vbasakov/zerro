@@ -3,7 +3,7 @@
   "version": "0.10.6",
   "private": true,
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start --openssl-legacy-provider",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "react-scripts build && cd ./build && now --prod",
