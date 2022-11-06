@@ -11,12 +11,16 @@ Content-Type: application/json
 }
 
 > {%
-    console.log(1)
-    console.log(response.body.json.url)
-    console.log(2)
- %}
-
-GET
+    var url = response.body.url
+    var start = url.indexOf("?code=") + 6
+    var end = url.indexOf("&user_id=")
+    var auth_code = url.substring(start, end)
+    client.global.set("auth_code", auth_code);
+    start = url.indexOf("&user_id=") + 9
+    end = url.indexOf("&regist")
+    var client_id = url.substring(start, end)
+    client.global.set("client_id", client_id);
+    %}
 
 
 ###
