@@ -1,8 +1,14 @@
-GET https://api.zenmoney.ru/oauth2/authorize/?client_id={{client_id}}&redirect_uri=http://localhost:3000&response_type=code HTTP/1.1
+###
+GET https://api.zenmoney.ru/oauth2/authorize/?client_id=g61164be3dd7521a6511ce97adc6bb&redirect_uri=http://localhost:3000&response_type=code
 
-####
-POST https://api.zenmoney.ru/oauth2/authorize HTTP/1.1
+> {%
+client.global.set("cookie", response.headers.valueOf('Set-Cookie'));
+%}
+
+###
+POST https://api.zenmoney.ru/oauth2/authorize/
 Content-Type: application/json
+Cookie: {{cookie}}
 
 {
   "authType": "password",
@@ -24,15 +30,24 @@ Content-Type: application/json
 
 
 ###
-POST https://api.zenmoney.ru/oauth2/token/ HTTP/1.1
+POST https://api.zenmoney.ru/oauth2/token/
 Host: api.zenmoney.ru
 Content-Type: application/x-www-form-urlencoded
+Cookie: {{cookie}}
 
 {
-  "client_id": "{{client_id}}",
-  "client_secret": "{{client_secret}}",
+  "client_id": "g61164be3dd7521a6511ce97adc6bb",
+  "client_secret": "b2828c65b7",
   "redirect_uri": "http://localhost:3000",
   "code": "{{auth_code}}",
   "grant_type": "authorization_code"
 }
 
+
+#{
+#    "client_id": "g61164be3dd7521a6511ce97adc6bb",
+#    "client_secret": "b2828c65b7",
+#    "redirect_uri": "http://localhost:3000",
+#    "code": "nauDLewCaO9cW1DDqiDlMCxmYBzPvU",
+#    "grant_type": "authorization_code"
+#}
