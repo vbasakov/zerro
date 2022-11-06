@@ -31,9 +31,7 @@ Cookie: {{cookie}}
 
 ###
 POST https://api.zenmoney.ru/oauth2/token/
-Host: api.zenmoney.ru
-Content-Type: application/x-www-form-urlencoded
-Cookie: {{cookie}}
+Content-Type: application/json
 
 {
   "client_id": "g61164be3dd7521a6511ce97adc6bb",
@@ -42,12 +40,3 @@ Cookie: {{cookie}}
   "code": "{{auth_code}}",
   "grant_type": "authorization_code"
 }
-
-
-#{
-#    "client_id": "g61164be3dd7521a6511ce97adc6bb",
-#    "client_secret": "b2828c65b7",
-#    "redirect_uri": "http://localhost:3000",
-#    "code": "nauDLewCaO9cW1DDqiDlMCxmYBzPvU",
-#    "grant_type": "authorization_code"
-#}
