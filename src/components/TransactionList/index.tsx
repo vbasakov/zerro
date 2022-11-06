@@ -75,6 +75,7 @@ const TransactionList: FC<TransactionListProps> = props => {
   const uncheckAll = useCallback(() => setChecked([]), [])
 
   const checkAll = () => {
+    //check all
     let ids: string[] = []
     Object.values(groups).forEach(day => {
       ids = ids.concat(day.transactions)

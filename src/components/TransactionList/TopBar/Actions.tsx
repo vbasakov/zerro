@@ -77,7 +77,7 @@ const Actions: FC<ActionsProps> = ({
     closeMenu()
     onUncheckAll()
   }
-
+  //todo checkall
   const handleCheckAll = () => {
     onCheckAll()
     closeMenu()

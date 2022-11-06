@@ -1,0 +1,38 @@
+GET https://api.zenmoney.ru/oauth2/authorize/?client_id={{client_id}}&redirect_uri=http://localhost:3000&response_type=code HTTP/1.1
+
+####
+POST https://api.zenmoney.ru/oauth2/authorize HTTP/1.1
+Content-Type: application/json
+
+{
+  "authType": "password",
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+> {%
+    console.log(1)
+    console.log(response.body.json.url)
+    console.log(2)
+ %}
+
+GET
+
+
+###
+POST https://api.zenmoney.ru/oauth2/token/ HTTP/1.1
+Host: api.zenmoney.ru
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&client_id=464119&client_secret=deadbeef&code=FD0485FC&redirect_uri=http%3A%2F%2Fexample.com%2Fcb%2F123
+
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+"access_token":"RQJpVwPJie7wr9SEzYNi5nVWVdKRTP",
+"token_type":"bearer",
+"expires_in":86400,
+"refresh_token":"jHCAqb9A1WGIkuk34SJm2VTg6PZY5K"
+}
