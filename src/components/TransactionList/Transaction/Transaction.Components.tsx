@@ -51,11 +51,11 @@ export const Symbol: FC<SymbolProps> = ({
       return (
         <SymbolWrapper>
           <EmojiIcon
-            symbol={tag.symbol}
+            symbol={tag?.symbol}
             showCheckBox={isInSelectionMode}
             checked={isChecked}
             onChange={() => onToggle(tr.id)}
-            color={tag.colorHEX}
+            color={tag?.colorHEX}
             size="m"
           />
           {/* Disable new indicator it doesn't work as expected */}
